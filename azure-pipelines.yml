@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: MJ
+pool: jaw
 steps:
 - task: Maven@4
   inputs:
