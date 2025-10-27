@@ -6,7 +6,7 @@
 trigger:
 - main
 
-pool: jaw
+pool: jawahar
 steps:
 - task: Maven@4
   inputs:
