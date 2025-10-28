@@ -20,7 +20,7 @@ steps:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'Path'
-    jdkDirectory: 'C:\Program Files\Java\jdk-21'   # adjust this
+    jdkDirectory: 'C:\Program Files\jdk-21.0.7'   # adjust this
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
