@@ -9,14 +9,19 @@ trigger:
 pool: test
 
 steps:
+- script: |
+    echo JAVA_HOME=%JAVA_HOME%
+    java -version
+    mvn -version
+  displayName: 'Verify Java and Maven'
+
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkSourceOption: 'PreInstalled'     # ✅ Tells pipeline to use system JDK
-    jdkVersionOption: '21'
+    javaHomeOption: 'Path'
+    jdkDirectory: 'C:\Program Files\Java\jdk-21'   # adjust this
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'compile'
+    goals: 'clean install -X'
